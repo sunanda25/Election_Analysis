@@ -27,11 +27,17 @@ The analysis of the election show that:
 - The winner of the election was:
   - Candidate Diana DeGette, who received "73.8%" of the vote and "272,892" number of votes.
 
-## Challenge Overview
+## Overview of Election Audit
+A Colorado Board of Elections employee, Tom wants to audit the recent local congressional election using Python. The audit should include the below findings:
+- Total number of votes cast
+- Total number of votes and percentage of votes for each candidate
+- Winner of the election based on popular vote
+Using Visual Studio Code editor, the above findings are calculated, and the results are shown in the summary above. After looking at the results Tom wants to find the below:
+- Number of votes and percentage of votes for each county
+- The county with the largest turnout
 
 ## Election Audit Results
-1. Total votes cast in the congressional election were calculated by reading the election_results.csv file.
-
+1. Total votes cast in the congressional election are calculated by counting the number of rows in the CSV file.
 ~~~
 # Read the csv and convert it into a list of dictionaries
 with open(file_to_load) as election_data:
@@ -49,7 +55,7 @@ with open(file_to_load) as election_data:
 
 ![image](https://user-images.githubusercontent.com/76491891/110859867-17b88b00-828a-11eb-867a-a329bc34b11f.png)
 
-2. Number of votes and the percentage of votes for each county were calculated using an IF statement:
+2. Number of votes and the percentage of votes for each county are calculated by using an IF statement and maintaining a list of distinct counties.
 
 ~~~
 # Write an if statement that checks that the
@@ -68,7 +74,7 @@ with open(file_to_load) as election_data:
 
 ![image](https://user-images.githubusercontent.com/76491891/110859812-ff487080-8289-11eb-8662-9b595c83d827.png)
 
-3. Largest county turnout was calculated using a FOR loop:
+3. County with the largest turnout is calculated using a FOR loop to scan each county and an IF loop to keep track of the county with the most number of votes.
 
 ~~~
 # Write a for loop to get the county from the county dictionary.
@@ -95,7 +101,7 @@ with open(file_to_load) as election_data:
 
 ![image](https://user-images.githubusercontent.com/76491891/110859989-3ae33a80-828a-11eb-8aef-c97da415bba9.png)
 
-4. Each candidate votes and percentage of votes was calculated using an IF statement:
+4. Each candidate's votes and percentage of votes are calculated using an IF statement and maintaining the values with the help of a dictionary.
 ~~~
 # If the candidate does not match any existing candidate add it to
         # the candidate list
@@ -113,7 +119,7 @@ with open(file_to_load) as election_data:
 
 ![image](https://user-images.githubusercontent.com/76491891/110860110-5d755380-828a-11eb-80cb-5b025ebb08ba.png)
 
-5. The vote count and percentage of total votes for the winning candidate were calculated using votes, vote_percentage, and candidate_name:
+5. The vote count and percentage of total votes for the winning candidate are calculated by comparing each candidate's vote count and vote percentage with the previous candidate.
 ~~~
 # Determine winning vote count, winning percentage, and candidate.
         if (votes > winning_count) and (vote_percentage > winning_percentage):
@@ -124,7 +130,10 @@ with open(file_to_load) as election_data:
 
 ![image](https://user-images.githubusercontent.com/76491891/110860147-6a924280-828a-11eb-9495-4547adfde502.png)
 
-## Challenge Summary
+## Election Audit Summary
+Below are a couple of examples to modify the script and make it usable for any election:
+- The script can be modified to take input from the user regarding the type of election (State, Federal, etc.). By using the input provided by the user, the results can be modified to show data based on the type of election.
+- The political party alliance for the candidate is not shown with the current script. By modifying code to display the political party alliance for the candidate it will be more useful for State and Federal elections.
 
 
 
