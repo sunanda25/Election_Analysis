@@ -32,6 +32,7 @@ A Colorado Board of Elections employee, Tom wants to audit the recent local cong
 - Total number of votes cast
 - Total number of votes and percentage of votes for each candidate
 - Winner of the election based on popular vote
+
 Using Visual Studio Code editor, the above findings are calculated, and the results are shown in the summary above. After looking at the results Tom wants to find the below:
 - Number of votes and percentage of votes for each county
 - The county with the largest turnout
@@ -134,8 +135,3 @@ with open(file_to_load) as election_data:
 Below are a couple of examples to modify the script and make it usable for any election:
 - The script can be modified to take input from the user regarding the type of election (State, Federal, etc.). By using the input provided by the user, the results can be modified to show data based on the type of election.
 - The political party alliance for the candidate is not shown with the current script. By modifying code to display the political party alliance for the candidate it will be more useful for State and Federal elections.
-
-
-
-
-
